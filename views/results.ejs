@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div>
+        <h1 style="text-align: center;">Output</h1>
+        <% if (output && output.plots && output.plots.length > 0) { %>
+            <h2>Plots:</h2>
+            <% output.plots.forEach((plot, index) => { %>
+                <img src="<%= plot %>" alt="Plot <%= index + 1 %>">
+            <% }); %>
+        <% } else { %>
+            <p>No plots generated.</p>
+        <% } %>
+    </div>
+    <div>
+    <% if (output && output.data) { %>
+        <h2>Additional Data:</h2>
+        <ul>
+            <% Object.entries(output.data).forEach(([key, value]) => { %>
+                <li><strong><%= key %>:</strong> <%= value %></li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>No plots generated.</p>
+    <% } %>
+    </div>
+</body>
+</html>
