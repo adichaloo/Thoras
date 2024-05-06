@@ -24,7 +24,6 @@ def plt_anomaly(df,anomalies,str):
     plt.xlabel('Time')
     plt.ylabel('CPU Usage')
     plt.legend()
-    plt.savefig('plot_anomalies_cpu.png')
     plt.grid(True)
     filename = f'plot_{str}.png'
     plot_filenames.append(filename)
